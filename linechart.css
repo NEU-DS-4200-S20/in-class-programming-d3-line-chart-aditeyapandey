@@ -1,6 +1,54 @@
-line{
-	stroke:black;
-	stroke-width:2px;
+body {
+  font: 20px arial;
+}
+.dataLine {
+  stroke: #4f1b26;
+  stroke-width: 5px;
   fill: none;
 }
 
+path {
+  fill: none;
+}
+
+.chartContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+text {
+  font-size: large;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+}
+
+.focus circle {
+  fill: #f1f3f3;
+  stroke: #6f257f;
+  stroke-width: 5px;
+}
+
+.hover-line {
+  stroke: #6f257f;
+  stroke-width: 2px;
+  stroke-dasharray: 3, 3;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 2px;
+}
+
+.grid line {
+  stroke: lightgrey;
+  stroke-opacity: 0.7;
+  shape-rendering: crispEdges;
+}

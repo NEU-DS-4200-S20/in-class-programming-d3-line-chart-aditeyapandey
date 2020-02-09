@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<title>In-Class Programming: D3 Line Chart</title>
+  <head>
+    <meta charset="utf-8" />
+    <title>In-Class Programming: D3 Line Chart</title>
 
-	<link rel="stylesheet" type="text/css" href="linechart.css">
-</head>
-<body>
-	<h1>In-Class Programming: D3 Line Chart</h1>
+    <link rel="stylesheet" type="text/css" href="linechart.css" />
+  </head>
+  <body>
+    <!-- Load the d3.js library( version 5 minified) -->
+    <script src="d3.v4.js"></script>
 
-
-	<!-- Load the d3.js library( version 5 minified) -->
-
-	<!-- Load the line.js file -->
-
-</body>
+    <!-- Load the line.js file -->
+    <script src="linechartInteractive.js"></script>
+    <div class="chartContainer">
+      <h1>In-Class Programming: D3 Line Chart</h1>
+      <select style="font-size:x-large ;" id="selectbox">
+        <option value="austin">Austin</option>
+        <option value="newyork">New York</option>
+        <option value="sfo">San Francisco</option>
+        <option value="all">All Cities</option>
+      </select>
+    </div>
+  </body>
 </html>
