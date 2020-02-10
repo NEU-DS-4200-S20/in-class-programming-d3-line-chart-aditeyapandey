@@ -1,4 +1,4 @@
-var parseDate = d3.timeParse("%Y%m%d");
+var parseDate = d3.timeParse("%Y%m%d"); //Time format was different in the temp dataset. So handling the parsing.
 
 d3.csv(
   "tempdata.csv",
@@ -123,13 +123,13 @@ function linechart(data) {
     })
     .attr("class", "dataLine")
     .attr("id", function(d) {
-      return d.id;
+      return d.id; // Adding an id to select the visualization for interactivity with external html elements (selectbox)
     })
     .on("mouseover", function(d) {
       // Selected Element
       d3.select("#info")
-        .attr("x", d3.mouse(this)[0] + 10)
-        .attr("y", d3.mouse(this)[1] + 15)
+        .attr("x", d3.mouse(this)[0] + 10) // Padding to move text away from the mouse pointer
+        .attr("y", d3.mouse(this)[1] + 15) // Padding to move text away from the mouse pointer
         .style("display", "")
         .text(d.id);
       //Reduce opacity of all the paths
