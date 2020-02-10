@@ -4,7 +4,7 @@ In this Readme, we provide you the source code of example we covered in the clas
 
 The original 'linechart.js' from the inclass assignment is also available. We expect you to compare the two files to understand the differences between one and multi-line chart.
 
-There will some css changes, you can chose to ignore them for the interactivity feature.
+There will some css changes, you can choose to ignore them for the interactivity feature.
 
 ## Setup
 
