@@ -32,12 +32,16 @@ function linechart(data) {
   ];
   //==============Wrangling Data for Creating Multi_Line Visualization================
 
+  console.log(series);
+
+  //We are using newyork for dates because all three lists have same dates
   var maxDate = d3.max(newyork, function(d) {
     return d.date;
   });
   var minDate = d3.min(newyork, function(d) {
     return d.date;
   });
+  //Nested max calculation
   var maxTemp = d3.max(series, function(arrays) {
     return d3.max(arrays.value, function(d) {
       return d.temp;
@@ -74,6 +78,7 @@ function linechart(data) {
     .domain([0, maxTemp])
     .range([height - margin.bottom - margin.top, 0]);
 
+  //Adding categorical color scale
   var color = d3.scaleOrdinal(d3.schemeCategory10);
 
   var xAxis = d3.axisBottom(xScale);
@@ -110,36 +115,35 @@ function linechart(data) {
     .data(series)
     .enter()
     .append("path")
-    .attr("id", function(d) {
-      return d.id;
-    })
     .attr("d", function(d, i) {
       return line(d.value);
     })
     .style("stroke", function(d, i) {
       return color(d.id);
     })
-    .attr("class", "dataLine");
-  // .on("mouseover", function(d) {
-  //   // Selected Element
-  //   d3.select("#info")
-  //     .attr("x", d3.mouse(this)[0] + 10)
-  //     .attr("y", d3.mouse(this)[1] + 15)
-  //     .style("display", "")
-  //     .text(d.id);
+    .attr("class", "dataLine")
+    .attr("id", function(d) {
+      return d.id;
+    })
+    .on("mouseover", function(d) {
+      // Selected Element
+      d3.select("#info")
+        .attr("x", d3.mouse(this)[0] + 10)
+        .attr("y", d3.mouse(this)[1] + 15)
+        .style("display", "")
+        .text(d.id);
+      //Reduce opacity of all the paths
+      d3.selectAll("path").attr("opacity", "0.1");
+      //Restore the opacity of selected path
+      d3.select("#" + d.id).attr("opacity", "1");
+    })
+    .on("mouseout", function(d) {
+      // Remove Label
+      d3.select("#info").style("display", "none");
 
-  //   //Reduce opacity of all the paths
-  //   d3.selectAll("path").attr("opacity", "0.1");
-  //   //Restore the opacity of selected path
-  //   d3.select("#" + d.id).attr("opacity", "1");
-  // })
-  // .on("mouseout", function(d) {
-  //   // Remove Label
-  //   d3.select("#info").style("display", "none");
-
-  //   //Restore the opacity of all paths
-  //   d3.selectAll("path").attr("opacity", "1");
-  // });
+      //Restore the opacity of all paths
+      d3.selectAll("path").attr("opacity", "1");
+    });
 
   // Adding a text element to show the city name
   chartGroup
