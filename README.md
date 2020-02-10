@@ -1,6 +1,6 @@
 # Interactive D3 Line Chart
 
-In this Readme, we provide you the source code of example we covered in the class. We have added a file called 'linechartinteractive.js' for implementing the interactive version.
+In this repo, we provide you the source code of example we covered in the class. We have added a file called 'linechartinteractive.js' for implementing the interactive version.
 
 The original 'linechart.js' from the inclass assignment is also available. We expect you to compare the two files to understand the differences between one and multi-line chart.
 
