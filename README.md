@@ -4,8 +4,6 @@ In this readme we provide you the source code of example we covered in the class
 
 The original 'linechart.js' is also available. We expect you to compare the two files to understand the differences between one and multi-line chart.
 
-GITHUB_PAGES_LINK
-
 ## Setup
 
 1. Clone this repository to your local machine. E.g., in your terminal / command prompt `CD` to where you want this the folder for this activity to be. Then run `git clone <YOUR_REPO_URL>`
